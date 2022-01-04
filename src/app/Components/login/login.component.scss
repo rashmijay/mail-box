@@ -1,0 +1,31 @@
+@import 'src/assets/colors.scss';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+}
+
+.login-form {
+    border: 1px solid $gray;
+    padding: 2rem 4rem;
+    background-color: $primary-color;
+}
+.form-group {
+  padding: 0 5px;
+}
+label {
+    color: $white;
+}
+title {
+    color: $dark-gray
+}
+.button-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+

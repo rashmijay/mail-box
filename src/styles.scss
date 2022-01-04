@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/colors.scss';
+
 .row {
     margin: 0;
 }
 .red {
     color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
 }
