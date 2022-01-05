@@ -1,0 +1,100 @@
+@import 'src/assets/colors.scss';
+
+.vertical-sidebar {
+    height: 100vh;
+    transition: 200ms width ease-in-out;
+    &.collapsed {
+    width: 5rem;
+    }
+    &.not-collapsed {
+    width: 15rem;
+    }
+}
+
+.nav-bar {
+    background-color: $white;
+    // flex-grow: 1;
+}
+
+.sidebar-btn {
+    background-color: $primary-color;
+    color: $white;
+}
+
+.nav-list{
+    list-style-type: none;
+.nav-item {
+    padding: 1.5rem 0.5rem;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    background-color: $gray;
+    text-align: center;
+    font-weight: 600;
+
+&:hover, &.active{
+    padding: 1.5rem 0.5rem;
+    border-left: 5px solid $primary-color;
+    background-color: $dark-gray;
+    color: $white;
+}
+
+&.icon {
+    background-color: $dark-gray;
+    font-weight: 500;
+    font-size: 2rem;
+    color: $white;
+
+    &:hover {
+        border-left: 5px solid transparent;
+    }
+}
+}
+}
+
+.form-inline {
+    .form-control, .form-control:active, .form-control:focus {
+        outline: none
+    }
+}
+
+.sidebar-section {
+    width: 30%;
+
+    .btn-primary {
+        background-color: $primary-color;
+        color: $white;
+        padding: 1rem 2rem;
+        outline: none;
+    }
+}
+
+.content {
+    padding: 0 1rem
+}
+
+.mail-grid {
+    width: 70%
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-column {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+
+.vertical-align {
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around
+}
+
+textarea {
+    width: 100%;
+}

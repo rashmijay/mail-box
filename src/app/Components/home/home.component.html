@@ -1,0 +1,130 @@
+<!-- <button class='sidebar-btn'>Sidebar</button> -->
+<div class="d-flex">
+  <div [ngClass]="{'vertical-sidebar': true, 'collapsed': isExpanded === false, 'not-collapsed': isExpanded === true}"
+    class="">
+    <ul class="nav-list">
+      <li [ngClass]="{'nav-item icon': true}">IN+</li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 1
+        }" (click)='setSideBarSelectedtion(1)'>1
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 2
+        }" (click)='setSideBarSelectedtion(2)'>2
+        <span *ngIf='isExpanded'>Layouts</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 3
+        }" (click)='setSideBarSelectedtion(3)'>3
+        <span *ngIf='isExpanded'>Graphs</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 4
+        }" (click)='setSideBarSelectedtion(4)'>4
+        <span *ngIf='isExpanded'>Mailbox</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 5
+        }" (click)='setSideBarSelectedtion(5)'>5
+        <span *ngIf='isExpanded'>Metrics</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 6
+        }" (click)='setSideBarSelectedtion(6)'>6
+        <span *ngIf='isExpanded'>Widgets</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 7
+        }" (click)='setSideBarSelectedtion(7)'>7
+        <span *ngIf='isExpanded'>Forms</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 8
+        }" (click)='setSideBarSelectedtion(8)'>8
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 9
+        }" (click)='setSideBarSelectedtion(9)'>9
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 10
+        }" (click)='setSideBarSelectedtion(10)'>10
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 11
+        }" (click)='setSideBarSelectedtion(11)'>11
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 12
+        }" (click)='setSideBarSelectedtion(12)'>12
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+      <li [ngClass]="{
+        'nav-item': true,
+        'active': sideBarSelection  === 13
+        }" (click)='setSideBarSelectedtion(13)'>13
+        <span *ngIf='isExpanded'>Dashboard</span></li>
+    </ul>
+  </div>
+  <div class="d-flex-column">
+    <div class='nav-bar'>
+      <nav class="navbar d-flex vertical-align space-around navbar-expand-lg navbar-light bg-light">
+        <button class='sidebar-btn btn' (click)='toggleExpand()'>Expand</button>
+        <div class="collapse navbar-collapse">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <button class='btn btn-secondary' (click)='signOut()'>Log out</button>
+      </nav>
+    </div>
+    <div class="content d-flex">
+      <div class="sidebar-section">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Compose Mail</button>
+      </div>
+      <div class="mail-grid">
+        Grid goes here...
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="modal fade" id="myModal" role="dialog">
+    <form [formGroup]="composeMailForm">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">New Message</h4>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <span class="input-group-addon">To&nbsp;</span>
+              <input id="msg" type="text" class="form-control" name="msg" formControlName="toAddress" />
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">Cc</span>
+              <input id="msg" type="text" class="form-control" name="msg" formControlName="ccAddress" />
+            </div>
+            <div class="input-group-btn">
+              <input id="msg" type="text" class="form-control" name="msg" placeholder="Subject" formControlName="subject" />
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="input-group-btn">
+              <textarea id="msg" type="text" class="form-control" name="msg" rows="8" formControlName="bodyMessage">
+              </textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSend()" [disabled]="!composeMailForm.valid">Send</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
