@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
 
   composeMailForm: FormGroup;
   emails: Array<any> = [];
+  sideBarSelection: number = 1;
+  isExpanded: boolean = false;
 
   constructor(private router: Router, private FormBuilder: FormBuilder, private emailService: EmailService, private userService: UserService) {
     this.composeMailForm = this.FormBuilder.group({
@@ -27,10 +29,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getEmail()
   }
-  sideBarSelection: string = '1'
-  isExpanded: boolean = false;
 
-  setSideBarSelectedtion(selection: string) {
+  setSideBarSelectedtion(selection: number) {
     this.sideBarSelection = selection;
   }
   toggleExpand() {
@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
 
   onSend() {
     const { toAddress = '', ccAddress = '', subject = '', body = '' } = this.composeMailForm.value;
-    const to = toAddress.split(',');
-    const cc = ccAddress.split(',');
+    const to = (toAddress || '').split(',');
+    const cc = (ccAddress || '').split(',');
     if (to.length > 0 && body.trim()) {
       this.emailService.sendEmail({ to: to, cc: cc, subject: subject, body: body } as IEmail);
       this.getEmail();

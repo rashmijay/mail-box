@@ -73,7 +73,8 @@
 }
 
 .list-group {
-    margin: 10px;
+    margin: 0px;
+    padding: 0px 15px;
     .list-group-item {
         border: none;
     }
@@ -94,7 +95,8 @@
 }
 
 .mail-grid {
-    width: 80%
+    width: 80%;
+    background-color: #f5f8fc;
 }
 
 .d-flex {

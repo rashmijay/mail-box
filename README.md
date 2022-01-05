@@ -22,7 +22,7 @@ Table of Contents:
 
 ### Live version : <!-- omit in toc -->
 
-Check out live application [Mail box]().
+Check out live application [Mail box](https://mail-box-test.herokuapp.com/).
 ___
 ### From the repo : <!-- omit in toc -->
 1. Clone the project locally. You will need node and npm installed globally on your machine.
