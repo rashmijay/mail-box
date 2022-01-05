@@ -58,7 +58,7 @@
 }
 
 .sidebar-section {
-    width: 30%;
+    width: 20%;
 
     .btn-primary {
         background-color: $primary-color;
@@ -68,22 +68,46 @@
     }
 }
 
-.content {
-    padding: 0 1rem
+.input-group {
+    margin: 15px 0px;
+}
+
+.list-group {
+    margin: 10px;
+    .list-group-item {
+        border: none;
+    }
+}
+.bold {
+    font-weight: bold;
+}
+.list-group-flush {
+    border-bottom: 1px;
+}
+
+.compose-mail {
+    margin-right: 15px !important;
+}
+
+.modal-body {
+    padding: 0 15px;
 }
 
 .mail-grid {
-    width: 70%
+    width: 80%
 }
 
 .d-flex {
     display: flex;
 }
 
+.flex-grow {
+    flex-grow: 1;
+}
+
 .d-flex-column {
     display:flex;
     flex-direction: column;
-    flex-grow: 1;
 
 }
 
@@ -94,7 +118,25 @@
 .space-around {
     justify-content: space-around
 }
+.space-between {
+    justify-content: space-between
+}
+.flex-start {
+    justify-content: flex-start
+}
 
 textarea {
     width: 100%;
+    margin-top: 15px;
+}
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.btn {
+    margin: 3px;
 }
