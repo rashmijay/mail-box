@@ -44,4 +44,5 @@ ___
 - [x] Login page implementation.
 - [x] Authentication of a valid user.
 - [x] Compose email feature.
-- [ ] Home page with the list of email and unread mail.
+- [x] Home page with the list of email sent to me.
+- [ ] Unread count and actions on individual emails.
