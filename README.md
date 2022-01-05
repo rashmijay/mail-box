@@ -15,7 +15,7 @@ Table of Contents:
 3. Creds for login:\
     `Username`: test\
     `Password`: test\
-**NOTE:** Password is `case-sensitive`
+**NOTE:** Password is `case-sensitive` and click on `seed data` button before login to populate DB with the test users
 4. While adding multiple emails to the `To or Cc` field use `,` as seperator
 
 # Running this project locally
