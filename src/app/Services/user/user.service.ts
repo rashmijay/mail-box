@@ -4,14 +4,14 @@ import { IUser } from '../../Interfaces/user';
 @Injectable({
   providedIn: 'root'
 })
-export class LocalStorageService {
+export class UserService {
 
   constructor() { }
 
   getUsers() {
     return JSON.parse(localStorage.getItem('users')) || [] as Array<IUser>
   }
-  getUser(username: string) {
+  getUserByUsername(username: string) {
     const users = JSON.parse(localStorage.getItem('users')) || []
     return Array.from(users).find((user: IUser) => user && user.username.toLowerCase() === username.toLowerCase()) as IUser;
   }

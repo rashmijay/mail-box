@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LocalStorageService } from 'src/app/Services/local-storage/local-storage.service';
+import { UserService } from 'src/app/Services/user/user.service';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/Interfaces/user';
 
@@ -13,20 +13,18 @@ import { IUser } from 'src/app/Interfaces/user';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private localStorage: LocalStorageService, private router: Router) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.loginForm = this.fb.group({
       'email': ['', Validators.required],
       'password': ['', Validators.required]
     })
   }
 
-
   ngOnInit() {
   }
 
-
   private isAuthenticated(username: string, password: string) {
-    const user = this.localStorage.getUser(username) as IUser;
+    const user = this.userService.getUserByUsername(username) as IUser;
     return user && user.password === password ? true : false;
   }
 
@@ -35,7 +33,7 @@ export class LoginComponent implements OnInit {
     // if (!(email && password)) alert('Either username or password is empty')
     if (email && password && this.isAuthenticated(email, password)) {
       this.loginForm.reset();
-      localStorage.setItem('currentUser', this.localStorage.getUser(email).id)
+      localStorage.setItem('currentUser', this.userService.getUserByUsername(email).id)
       this.router.navigate(['home'])
     }
     // else {
